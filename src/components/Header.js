@@ -10,8 +10,8 @@ const Search = () => {
             })
         console.log(data);
     }
-    // const x = document.querySelector('.ip');
-    // console.log(x);
+    // 
+    
     return (
         <div>
             <h1>Weather Forecast</h1>
