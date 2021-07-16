@@ -1,19 +1,38 @@
 import './App.css';
-import Search from './components/Header'
+import React, { useState, useEffect } from 'react'
+import Header from './components/Header'
 const App = () => {
-  // fetch(`api.openweathermap.org/data/2.5/weather?q={'Delhi'}&appid={'0ee51fb6336e80229ec5a82837f78b1e'}`).then((response)=>{
-  //   console.log(response);
-  // });
-  // async function sample(){
-    // const data = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat=28.38&lon=77.12&appid=0ee51fb6336e80229ec5a82837f78b1e').then((response)=>{
-    //   return response.json();
-    // })
-    // console.log(data);
+  //   const [weather, setWeather] = useState();
+
+  //   const getReport = async (event) => {
+  //     event.preventDefault();
+  //     const city = event.target.querySelector('.ip').value;
+  //     const data = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat=28.38&lon=77.12&appid=0ee51fb6336e80229ec5a82837f78b1e')
+  //         .then((response) => {
+  //             return response.json();
+  //         })
+  //     setWeather(data);
+  //     console.log(weather);
   // }
-  // sample();
+  const [weather, setWeather] = useState();
+  const [query, setQuery] = useState();
+
+  useEffect(() => {
+    const getReport = async () => {
+      // const city = event.target.querySelector('.ip').value;
+      const data = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat=28.38&lon=77.12&appid=0ee51fb6336e80229ec5a82837f78b1e')
+        .then((response) => {
+          return response.json();
+        })
+      setWeather(data);
+      console.log(weather);
+    }
+    getReport();
+  }, [query])
+
   return (
     <div className="App">
-      <Search/>
+      <Header queryHandler = {(q) => setQuery(q)}/>
     </div>
   );
 }

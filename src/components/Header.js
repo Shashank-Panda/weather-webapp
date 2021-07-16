@@ -1,25 +1,20 @@
 import React, { useState, useEffect } from 'react'
 
-const Search = () => {
-    const [location, setlocation] = useState('');
-    const getReport = async (event) => {
+const Search = ({queryHandler}) => {
+    // const [location, setlocation] = useState('');
+    const submitHandler = (event) => {
         event.preventDefault();
-        const data = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat=28.38&lon=77.12&appid=0ee51fb6336e80229ec5a82837f78b1e')
-            .then((response) => {
-                return response.json();
-            })
-        console.log(data);
+        queryHandler(event.target.querySelector('.ip').value);
     }
-    // 
-    
+
     return (
-        <div>
+        <section>
             <h1>Weather Forecast</h1>
-            <form>
-                <input className='ip' type="text" placeholder='Enter city name' autoFocus value={location} onChange />
-                <button className='btn' onClick={getReport}>Search</button>
+            <form onSubmit = {submitHandler}>
+                <input className='ip' type="text" placeholder='Enter city name' autoFocus/>
+                <button className='btn' type='submit' >Search</button>
             </form>
-        </div>
+        </section>
     )
 }
 
