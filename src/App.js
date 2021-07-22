@@ -16,6 +16,7 @@ const App = () => {
   //     console.log(weather);
   // }
   const apiKey = '15fe71c149e289ae0f8cb40cedea49d1';
+  
   const sample = `{
       "coord": {
         "lon": -122.08,
