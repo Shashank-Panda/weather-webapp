@@ -3,15 +3,34 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-.header {
-  padding: 20px;
+.fragment {
+  position: relative;
+  /* background-color: violet; */
+}
+header {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: #2b2b41;
   display: flex;
-  color: white;
+  align-items: center;
+  transition: 0.6s;
   justify-content: space-between;
-  font-size: 4vh;
+  padding: 40px 100px;
   font-family: 'Merriweather', serif;
+}
+
+header .logo{
+  position: relative;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  transition: 0.6s;
 }
 
 ::placeholder {
@@ -19,20 +38,27 @@
   opacity: 0.5;
 }
 
-form {
-  font-family: 'Balsamiq Sans', cursive;
+header form {
+  position: relative;
+  font-family: 'Merriweather', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+  /* font-size: 3vh; */
 }
+
 .ip {
   padding: 7px;
   outline: none;
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
   border: none;
   border-bottom: 2px solid #ccc;
   color: white;
   background-color: inherit;
   /* width: 100%; */
-  /* display: block; */
-  margin: 1rem 0;
+  display: block;
   height: auto;
   width: auto;
 }
@@ -42,7 +68,8 @@ form {
   margin-left: 5px;
   height: auto;
   width: auto;
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -53,4 +80,61 @@ form {
 .btn:active {
   transform: scale(0.98);
   /* Scaling button to 0.98 to its original size */
+}
+
+.current{
+  width: 600px;
+  height: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid black;
+  text-align: center;
+}
+
+.cityname {
+  text-transform: uppercase;
+}
+
+.middle-display{
+  display : inline-block;
+  position : relative;
+  margin-top: 30px;
+  height : 350px;
+}
+.visible{
+  display : block;
+}
+.invisible{
+  display : none;
+}
+#hourly-forecast{
+  width: 45%;
+  right: 5%;
+  /* height: 16vh;  */
+}
+#map{
+  /* margin-top: 200px;
+  height: 50vh; */
+  /* position: absolute; */
+  z-index: -1;
+  width: 35%;
+  left : 2%;
+}
+#daily-forecast{
+  top : 25px;
+  height: 300px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+#add-information{
+  display : block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }

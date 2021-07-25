@@ -9,13 +9,13 @@ const Search = ({queryHandler}) => {
     }
 
     return (
-        <div className = 'header'>
-            <h1>Weather Forecast</h1>
+        <header>
+            <h1 className = 'logo'>Weather Forecast</h1>
             <form onSubmit = {submitHandler}>
                 <input className='ip' type="text" placeholder='Enter city name' autoFocus/>
                 <button className='btn' type='submit' >Search</button>
             </form>
-        </div>
+        </header>
     )
 }
 
