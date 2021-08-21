@@ -4,11 +4,26 @@ import { Line } from "react-chartjs-2";
 function HourlyForecast({ weatherInfo }) {
   let hourlyInfo = weatherInfo.hourly , timeStamp = [], temperatureData = [];
   for( let i = 0 ; i < 8 ; i++ ){
-    timeStamp.push(hourlyInfo[i].dt);
+    const offset = weatherInfo.timezone_offset;
+    const dt = hourlyInfo[i].dt;
+    const local = 19800;
+    function Unix_timestamp(t) {
+      let dt = new Date(t * 1000);
+      let hr = dt.getHours();
+      return hr;
+    }
+
+    let time = Unix_timestamp(dt - local + offset);
+    if(time < 13){
+      time = `${time} am`
+    }
+    else
+      time = `${time - 12} pm`
+    timeStamp.push(time);
     temperatureData.push(hourlyInfo[i].temp - 273);
   }
   return (
-    <div id="hourly-forecast" class="middle-display">
+    <div id="hourly-forecast" >
       <Line
         height = "52px"
         width = "100%"

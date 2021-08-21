@@ -96,12 +96,11 @@ header form {
 .cityname {
   text-transform: uppercase;
 }
-
 .middle-display{
-  display : inline-block;
-  position : relative;
-  margin-top: 30px;
-  height : 350px;
+  display : flex;
+  flex-direction : row;
+  margin: 2em;
+  height : 400px;
 }
 .visible{
   display : block;
@@ -109,18 +108,16 @@ header form {
 .invisible{
   display : none;
 }
+.tableElement{
+  text-align: center;
+}
 #hourly-forecast{
-  width: 45%;
-  right: 5%;
-  /* height: 16vh;  */
+  width: 50%;
 }
 #map{
-  /* margin-top: 200px;
-  height: 50vh; */
-  /* position: absolute; */
-  z-index: -1;
-  width: 35%;
-  left : 2%;
+  z-index: 0;
+  width: 40%;
+  margin-left: auto;
 }
 #daily-forecast{
   top : 25px;
@@ -128,13 +125,12 @@ header form {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
   border: 1px solid #dddddd;
   padding: 8px;
 }
 #add-information{
   display : block;
-  margin-top: 10px;
+  margin: 10px;
   margin-left: auto;
   margin-right: auto;
 }

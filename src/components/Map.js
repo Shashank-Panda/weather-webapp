@@ -8,9 +8,8 @@ function Map({ city }) {
   return (
     <iframe
         id="map" 
-        className = "middle-display"
         width="100%"
-        height="350px"
+        height="370px"
         style = {styleset}
         loading="lazy"
         allowFullScreen
