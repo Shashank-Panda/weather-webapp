@@ -2,7 +2,7 @@ import React from 'react'
 
 const CurrentWeather = ({ report, city }) => {
     if (report.cod >= 400) {
-        console.log('Invalid input');
+        // console.log('Invalid input');
         return (
             <>
             </>
@@ -49,7 +49,7 @@ const CurrentWeather = ({ report, city }) => {
     }
     
     const time = Unix_timestamp(dt-local+offset);
-    console.log(temperature);
+    // console.log(temperature);
     return (
         <div className='current'>
             <h1 className='cityname'>{city}</h1>

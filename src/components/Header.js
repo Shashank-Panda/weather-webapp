@@ -12,7 +12,7 @@ const Search = ({queryHandler}) => {
         <header>
             <h1 className = 'logo'>Weather Forecast</h1>
             <form onSubmit = {submitHandler}>
-                <input className='ip' type="text" placeholder='Enter city name' autoFocus/>
+                <input className='ip' type="text" placeholder='Enter city name' name='ip' autoFocus/>
                 <button className='btn' type='submit' >Search</button>
             </form>
         </header>

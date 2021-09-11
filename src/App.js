@@ -14,21 +14,28 @@ const App = () => {
   let lat, lon;
   useEffect(() => {
     const getReport = async () => {
-      const tempData = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apiKey}`
-      ).then((response) => response.json())
-       .catch((error) => console.log(error));
-
-      lat = tempData.coord.lat;
-      lon = tempData.coord.lon;
-      const data = await fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`
-      )
-        .then((response) => response.json())
-        .catch((error) => console.log(error));
-      console.log(tempData);
+      let data=null, tempData;
+      try{
+        tempData = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apiKey}`
+        ).then((response) => response.json())
+        //  .catch((error) => console.log(error));
+  
+        lat = tempData.coord.lat;
+        lon = tempData.coord.lon;
+        data = await fetch(
+          `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`
+        )
+          .then((response) => response.json())
+          // .catch((error) => console.log(error));
+      }
+      catch(error){
+        console.log(error);
+        alert("Please enter a valid location!");
+      }
+      // console.log(tempData);
       console.log(data);
-      console.log(lat, lon);
+      // console.log(lat, lon);
       setWeather(data);
     };
     getReport();

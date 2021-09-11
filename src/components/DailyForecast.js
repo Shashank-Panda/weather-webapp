@@ -9,9 +9,9 @@ const toggleInfo = () => {
   columns.forEach((column) => {
     column.classList.toggle("invisible");
   });
-  if (dailyForecast.style.width == "40%") dailyForecast.style.width = "75%";
+  if (dailyForecast.style.width === "40%") dailyForecast.style.width = "75%";
   else dailyForecast.style.width = "40%";
-  console.log(dailyForecast);
+  // console.log(dailyForecast);
 };
 
 function DailyForecast({ weatherInfo }) {
@@ -19,8 +19,8 @@ function DailyForecast({ weatherInfo }) {
     num1,
     num2;
   let dailyInfo = weatherInfo.daily;
-  console.log(weatherInfo);
-  console.log(dailyInfo);
+  // console.log(weatherInfo);
+  // console.log(dailyInfo);
   const offset = weatherInfo.timezone_offset;
 
   for (let i = 0; i < 8; i++) {
